@@ -1,0 +1,32 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>hike</th>
+      <th>description</th>
+      <th>difficulty</th>
+      <th>length (km)</th>
+      <th>elevation</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each hiketrail.hikes}}
+      <tr>
+        <td>
+          {{hike}}
+        </td>
+        <td>
+          {{description}}
+        </td>
+        <td>
+          {{difficulty}}
+        </td>
+        <td>
+          {{length}}
+        </td>
+        <td>
+          {{elevation}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

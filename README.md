@@ -1,5 +1,5 @@
 <p align="center">
-<h1 style="font-size: 36px; margin-bottom: 20px;">TITLE PLACEHOLDER</h1>
+<h1 style="font-size: 36px; margin-bottom: 20px;">HikePlace!</h1>
 <img src="/images/" alt="Image" width="75%"/>
 </p>
 
@@ -45,7 +45,7 @@
 * 
 
 <p align="center">
-<img src="/images/arduino-logo.png" alt="arduino" width="200" style="margin: 30px;"/>    <img src="/images/blynk-logo.png" alt="blynk" width="200" style="margin: 30px;"/>
+
 </p>
 
 **Primary Objectives**

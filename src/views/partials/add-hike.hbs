@@ -1,0 +1,23 @@
+<form class="box" action="/hiketrail/{{hiketrail._id}}/addhike" method="POST">
+  <label>enter hike details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="enter hike" name="hike">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="enter description" name="description">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="enter difficulty" name="difficulty">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="enter length" name="length">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="enter elevation" name="elevation">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">add hike</button>
+</form>
