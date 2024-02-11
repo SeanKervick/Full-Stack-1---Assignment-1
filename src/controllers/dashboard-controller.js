@@ -3,21 +3,25 @@ import { db } from "../models/db.js";
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
-      const hiketrails = await db.hiketrailStore.getAllHiketrails();
+      const loggedInUser = request.auth.credentials;
+      const locations = await db.locationStore.getUserLocations(loggedInUser._id);
       const viewData = {
         title: "hikeplace dashboard",
-        hiketrails: hiketrails,
+        user: loggedInUser,
+        locations: locations,
       };
       return h.view("dashboard-view", viewData);
     },
   },
 
-  addHiketrail: {
+  addLocation: {
     handler: async function (request, h) {
-      const newHiketrail = {
+      const loggedInUser = request.auth.credentials;
+      const newLocation = {
+        userid: loggedInUser._id,
         title: request.payload.title,
       };
-      await db.hiketrailStore.addHiketrail(newHiketrail);
+      await db.locationStore.addLocation(newLocation);
       return h.redirect("/dashboard");
     },
   },

@@ -7,23 +7,23 @@ export const hikeMemStore = {
     return hikes;
   },
 
-  async addHike(hiketrailId, hike) {
+  async addHike(locationId, hike) {
     hike._id = v4();
-    hike.hiketrailid = hiketrailId;
+    hike.locationid = locationId;
     hikes.push(hike);
     return hike;
   },
 
-  async getHikesByHiketrailId(id) {
-    return hikes.filter((hike) => hike.hiketrailid === id);
+  async getHikesByLocationId(id) {
+    return hikes.filter((hike) => hike.locationid === id);
   },
 
   async getHikeById(id) {
     return hikes.find((hike) => hike._id === id);
   },
 
-  async getHiketrailHikes(hiketrailId) {
-    return hikes.filter((hike) => hike.hiketrailid === hiketrailId);
+  async getLocationHikes(locationId) {
+    return hikes.filter((hike) => hike.locationid === locationId);
   },
 
   async deleteHike(id) {

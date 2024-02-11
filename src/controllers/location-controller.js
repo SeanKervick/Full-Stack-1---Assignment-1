@@ -1,20 +1,20 @@
 import { db } from "../models/db.js";
 
-export const hiketrailController = {
+export const locationController = {
   index: {
     handler: async function (request, h) {
-      const hiketrail = await db.hiketrailStore.getHiketrailById(request.params.id);
+      const location = await db.locationStore.getLocationById(request.params.id);
       const viewData = {
-        title: "hiketrail",
-        hiketrail: hiketrail,
+        title: "location",
+        location: location,
       };
-      return h.view("hiketrail-view", viewData);
+      return h.view("location-view", viewData);
     },
   },
 
   addHike: {
     handler: async function (request, h) {
-      const hiketrail = await db.hiketrailStore.getHiketrailById(request.params.id);
+      const location = await db.locationStore.getLocationById(request.params.id);
       const newHike = {
         hike: request.payload.hike,
         description: request.payload.description,
@@ -22,8 +22,8 @@ export const hiketrailController = {
         length: request.payload.length,
         elevation: request.payload.elevation,
       };
-      await db.hikeStore.addHike(hiketrail._id, newHike);
-      return h.redirect(`/hiketrail/${hiketrail._id}`);
+      await db.hikeStore.addHike(location._id, newHike);
+      return h.redirect(`/location/${location._id}`);
     },
   },
 };
