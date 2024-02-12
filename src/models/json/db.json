@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "firstName": "SEÁN",
+      "lastName": "KERVICK",
+      "email": "a@a.com",
+      "password": "a",
+      "_id": "798d5b14-611f-49bf-a843-fcf9b13214d9"
+    }
+  ],
+  "locations": [],
+  "hikes": []
+}

@@ -26,4 +26,12 @@ export const locationController = {
       return h.redirect(`/location/${location._id}`);
     },
   },
+
+  deleteHike: {
+    handler: async function(request, h) {
+      const location = await db.locationStore.getLocationById(request.params.id);
+      await db.hikeStore.deleteHike(request.params.hikeid);
+      return h.redirect(`/location/${location._id}`);
+    },
+  },
 };

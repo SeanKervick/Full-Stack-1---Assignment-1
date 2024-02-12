@@ -18,4 +18,6 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
   { method: "GET", path: "/location/{id}", config: locationController.index },
   { method: "POST", path: "/location/{id}/addhike", config: locationController.addHike },
+  { method: "GET", path: "/dashboard/deletelocation/{id}", config: dashboardController.deleteLocation },
+  { method: "GET", path: "/location/{id}/deletehike/{hikeid}", config: locationController.deleteHike },
 ];
