@@ -1,13 +1,43 @@
 {
   "users": [
     {
-      "firstName": "SEÁN",
-      "lastName": "KERVICK",
-      "email": "a@a.com",
-      "password": "a",
-      "_id": "798d5b14-611f-49bf-a843-fcf9b13214d9"
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "d3a4a626-d17c-49b8-8c12-ea80db4d6b91"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "565e7ed1-3e6b-4701-b7cd-1e3b2761a1f5"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "61ccccb8-1302-4145-932e-3835e2bf1a9f"
     }
   ],
-  "locations": [],
-  "hikes": []
+  "locations": [
+    {
+      "userid": "de83bcda-97c1-4e22-ad6b-5103ebf51e30",
+      "title": "a1",
+      "_id": "dabbae79-dff1-44a4-925d-987f53446a0a"
+    }
+  ],
+  "hikes": [
+    {
+      "hikeName": "mahon falls",
+      "description": "nice walk to waterfall placeholder placehoder",
+      "difficulty": "easy",
+      "length": 5,
+      "elevation": "flat",
+      "_id": "4d10b1fd-64aa-42ff-b2f7-cdb87aa61f50",
+      "locationid": "dabbae79-dff1-44a4-925d-987f53446a0a"
+    }
+  ]
 }

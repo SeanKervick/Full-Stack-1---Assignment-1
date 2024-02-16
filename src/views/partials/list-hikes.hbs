@@ -1,7 +1,7 @@
 <table class="table is-fullwidth">
   <thead>
     <tr>
-      <th>hike</th>
+      <th>hike name</th>
       <th>description</th>
       <th>difficulty</th>
       <th>length (km)</th>
@@ -12,7 +12,7 @@
     {{#each location.hikes}}
       <tr>
         <td>
-          {{hike}}
+          {{hikeName}}
         </td>
         <td>
           {{description}}
@@ -21,7 +21,7 @@
           {{difficulty}}
         </td>
         <td>
-          {{length}}
+          {{length}}km
         </td>
         <td>
           {{elevation}}

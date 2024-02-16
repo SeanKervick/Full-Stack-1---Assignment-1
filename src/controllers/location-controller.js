@@ -1,4 +1,6 @@
 import { db } from "../models/db.js";
+import { HikeSpec } from "../models/joi-schemas.js";
+
 
 export const locationController = {
   index: {
@@ -13,10 +15,17 @@ export const locationController = {
   },
 
   addHike: {
+    validate: {
+      payload: HikeSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("location-view", { title: "add hike error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const location = await db.locationStore.getLocationById(request.params.id);
       const newHike = {
-        hike: request.payload.hike,
+        hikeName: request.payload.hikeName,
         description: request.payload.description,
         difficulty: request.payload.difficulty,
         length: request.payload.length,

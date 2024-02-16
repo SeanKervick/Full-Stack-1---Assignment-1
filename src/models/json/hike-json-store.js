@@ -39,9 +39,12 @@ export const hikeJsonStore = {
   },
 
   async updateHike(hike, updatedHike) {
-    hike.title = updatedHike.title;
-    hike.artist = updatedHike.artist;
-    hike.duration = updatedHike.duration;
+    hike.hikeName = updatedHike.hikeName;
+    hike.description = updatedHike.description;
+    hike.difficulty = updatedHike.difficulty;
+    hike.length = updatedHike.length;
+    hike.elevation = updatedHike.elevation;
     await db.write();
   },
 };
+
