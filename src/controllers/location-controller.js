@@ -18,8 +18,9 @@ export const locationController = {
     validate: {
       payload: HikeSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("location-view", { title: "add hike error", errors: error.details }).takeover().code(400);
+      failAction: async function (request, h, error) {
+        const currentLocation = await db.locationStore.getLocationById(request.params.id);
+        return h.view("location-view", { title: "Add Hike error", location:currentLocation, errors: error.details }).takeover().code(400);
       },
     },
     handler: async function (request, h) {
@@ -28,7 +29,7 @@ export const locationController = {
         hikeName: request.payload.hikeName,
         description: request.payload.description,
         difficulty: request.payload.difficulty,
-        length: request.payload.length,
+        length: Number(request.payload.length),
         elevation: request.payload.elevation,
       };
       await db.hikeStore.addHike(location._id, newHike);

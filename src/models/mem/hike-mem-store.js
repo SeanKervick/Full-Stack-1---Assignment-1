@@ -19,16 +19,24 @@ export const hikeMemStore = {
   },
 
   async getHikeById(id) {
-    return hikes.find((hike) => hike._id === id);
+    let foundHike = hikes.find((hike) => hike._id === id);
+    if (!foundHike) {
+      foundHike = null;
+    }
+    return foundHike;
   },
 
   async getLocationHikes(locationId) {
-    return hikes.filter((hike) => hike.locationid === locationId);
+    let foundHikes = hikes.filter((hike) => hike.locationid === locationId);
+    if (!foundHikes) {
+      foundHikes = null;
+    }
+    return foundHikes;
   },
 
   async deleteHike(id) {
     const index = hikes.findIndex((hike) => hike._id === id);
-    hikes.splice(index, 1);
+    if (index !== -1) hikes.splice(index, 1);
   },
 
   async deleteAllHikes() {
@@ -36,8 +44,11 @@ export const hikeMemStore = {
   },
 
   async updateHike(hike, updatedHike) {
-    hike.title = updatedHike.title;
-    hike.artist = updatedHike.artist;
-    hike.duration = updatedHike.duration;
+    hike.hikeName = updatedHike.hikeName;
+    hike.description = updatedHike.description;
+    hike.difficulty = updatedHike.difficulty;
+    hike.length = updatedHike.length;
+    hike.elevation = updatedHike.elevation;
   },
 };
+

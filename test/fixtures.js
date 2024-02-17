@@ -25,3 +25,25 @@ export const maggie = {
       password: "secret",
     },
   ];
+
+  export const waterford = {
+    title: "waterford"
+  };
+  
+  export const testLocations = [
+    {
+      hikeName: "Mahon Falls"
+    },
+    {
+      description: "Nice flat to waterfall"
+    },
+    {
+      difficulty: "easy"
+    },
+    {
+        length: "10"
+    },
+    {
+        elevation: "flat"
+    },
+  ];

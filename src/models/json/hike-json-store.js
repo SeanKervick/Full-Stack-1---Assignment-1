@@ -18,18 +18,35 @@ export const hikeJsonStore = {
 
   async getHikesByLocationId(id) {
     await db.read();
-    return db.data.hikes.filter((hike) => hike.locationid === id);
+    let foundHikes = db.data.hikes.filter((hike) => hike.locationid === id);
+    if (!foundHikes) {
+      foundHikes = null;
+    }
+    return foundHikes;
   },
 
   async getHikeById(id) {
     await db.read();
-    return db.data.hikes.find((hike) => hike._id === id);
+    let foundHike = db.data.hikes.find((hike) => hike._id === id);
+    if (!foundHike) {
+      foundHike = null;
+    }
+    return foundHike;
+  },
+
+  async getLocationHikes(locationId) {
+    await db.read();
+    let foundHikes = hikes.filter((hike) => hike.locationid === locationId);
+    if (!foundHikes) {
+      foundHikes = null;
+    }
+    return foundHikes;
   },
 
   async deleteHike(id) {
     await db.read();
     const index = db.data.hikes.findIndex((hike) => hike._id === id);
-    db.data.hikes.splice(index, 1);
+    if (index !== -1) db.data.hikes.splice(index, 1);
     await db.write();
   },
 
