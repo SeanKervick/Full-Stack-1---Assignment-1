@@ -26,7 +26,7 @@ suite("Location Model tests", () => {
 
   test("delete all locations", async () => {
     let returnedLocations = await db.locationStore.getAllLocations();
-    assert.equal(returnedLocations.length, 5);
+    assert.equal(returnedLocations.length, 3);
     await db.locationStore.deleteAllLocations();
     returnedLocations = await db.locationStore.getAllLocations();
     assert.equal(returnedLocations.length, 0);

@@ -29,21 +29,51 @@ export const maggie = {
   export const waterford = {
     title: "waterford"
   };
+
+  export const mahonFalls = {
+    "hikeName": "Mahon Falls",
+    "description": "Nice flat to waterfall",
+    "difficulty": "easy",
+    "length": 10,
+    "elevation": "steep"
+  };
+  
+  export const kerry = {
+    title: "kerry"
+  };
   
   export const testLocations = [
     {
-      hikeName: "Mahon Falls"
+      title: "waterford"
     },
     {
-      description: "Nice flat to waterfall"
+      title: "kerry"
     },
     {
-      difficulty: "easy"
+      title: "cork"
+    }
+  ];
+  
+  export const testHikes = [
+    {
+      "hikeName": "Mahon Falls",
+      "description": "Nice flat to waterfall",
+      "difficulty": "easy",
+      "length": 2,
+      "elevation": "flat"
     },
     {
-        length: "10"
+      "hikeName": "gap of dunloe",
+      "description": "narrow mountain pass running through kerry",
+      "difficulty": "medium",
+      "length": 15,
+      "elevation": "flat"
     },
     {
-        elevation: "flat"
-    },
+      "hikeName": "Carorauntoohill",
+      "description": "highest peak in ireland",
+      "difficulty": "hard",
+      "length": 5,
+      "elevation": "steep"
+    }
   ];

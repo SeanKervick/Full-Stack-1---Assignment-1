@@ -3,7 +3,7 @@ import { Hike } from "./hike.js";
 export const hikeMongoStore = {
   async getAllHikes() {
     const hikes = await Hike.find().lean();
-    return Hikes;
+    return hikes;
   },
 
   async addHike(locationId, hike) {
@@ -40,9 +40,11 @@ export const hikeMongoStore = {
 
   async updateHike(hike, updatedHike) {
     const hikeDoc = await Hike.findOne({ _id: hike._id });
-    hikeDoc.title = updatedHike.title;
-    hikeDoc.artist = updatedHike.artist;
-    hikeDoc.duration = updatedHike.duration;
+    hikeDoc.hikeName = updatedHike.hikeName;
+    hikeDoc.description = updatedHike.description;
+    hikeDoc.difficulty = updatedHike.difficulty;
+    hikeDoc.length = updatedHike.length;
+    hikeDoc.elevation = updatedHike.elevation;
     await hikeDoc.save();
   },
 };
