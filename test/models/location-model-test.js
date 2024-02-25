@@ -1,8 +1,8 @@
 import { assert } from "chai";
 import { EventEmitter } from "events";
-import { db } from "../src/models/db.js";
-import { testLocations, waterford } from "./fixtures.js";
-import { assertSubset } from "./test-utils.js";
+import { db } from "../../src/models/db.js";
+import { testLocations, waterford } from "../fixtures.js";
+import { assertSubset } from "../test-utils.js";
 
 
 suite("Location Model tests", () => {
@@ -39,7 +39,7 @@ suite("Location Model tests", () => {
     assertSubset(waterford, location)
   });
 
-  test("delete One Playist - success", async () => {
+  test("delete One Location - success", async () => {
     const id = testLocations[0]._id;
     await db.locationStore.deleteLocationById(id);
     const returnedLocations = await db.locationStore.getAllLocations();
