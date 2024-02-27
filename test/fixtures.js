@@ -46,13 +46,13 @@ export const kerry = {
 
 export const testLocations = [
   {
-    title: "waterford"
+    title: "cork"
   },
   {
     title: "kerry"
   },
   {
-    title: "cork"
+    title: "waterford"
   }
 ];
 

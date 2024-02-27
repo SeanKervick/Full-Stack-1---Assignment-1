@@ -20,4 +20,5 @@ export const webRoutes = [
   { method: "POST", path: "/location/{id}/addhike", config: locationController.addHike },
   { method: "GET", path: "/dashboard/deletelocation/{id}", config: dashboardController.deleteLocation },
   { method: "GET", path: "/location/{id}/deletehike/{hikeid}", config: locationController.deleteHike },
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
 ];
