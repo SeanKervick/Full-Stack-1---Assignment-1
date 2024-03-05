@@ -1,6 +1,5 @@
 import { db } from "../models/db.js";
-import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
-
+import { UserSpec, UserCredentialsSpec, } from "../models/joi-schemas.js";
 
 export const accountsController = {
   index: {
@@ -36,6 +35,13 @@ export const accountsController = {
     },
   },
 
+  showAdminLogin: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("admin-login-view", { title: "login to hikeplace as admin" });
+    },
+  },
+
   login: {
     auth: false,
     validate: {
@@ -55,6 +61,8 @@ export const accountsController = {
       return h.redirect("/dashboard");
     },
   },
+
+
 
   logout: {
     handler: function (request, h) {

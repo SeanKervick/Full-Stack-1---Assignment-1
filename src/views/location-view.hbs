@@ -1,9 +1,14 @@
 {{> menu}}
 
-<section class="section">
-  <div class="title">
-    {{location.hike}}
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      {{location.title}}
+    </div>
+    {{> list-hikes}}
+    {{> add-hike}}
   </div>
-  {{> list-hikes}}
-  {{> add-hike}}
+  <div class="column">
+    {{> location-image }}
+  </div>
 </section>

@@ -12,6 +12,9 @@
     "testmodels": "./node_modules/mocha/bin/mocha --ui tdd test/models/**/*.js",
     "testapi": "./node_modules/mocha/bin/mocha --ui tdd test/api/**/*.js"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SeanKervick/hikeplace.git"
@@ -42,6 +45,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
     "chai": "^5.1.0",
+    "cloudinary": "^2.0.2",
     "dotenv": "^16.4.2",
     "handlebars": "^4.7.8",
     "hapi-swagger": "^17.2.1",

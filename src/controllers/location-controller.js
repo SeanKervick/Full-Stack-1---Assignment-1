@@ -1,5 +1,7 @@
 import { db } from "../models/db.js";
 import { HikeSpec } from "../models/joi-schemas.js";
+import { imageStore } from "../models/image-store.js";
+
 
 
 export const locationController = {
@@ -42,6 +44,31 @@ export const locationController = {
       const location = await db.locationStore.getLocationById(request.params.id);
       await db.hikeStore.deleteHike(request.params.hikeid);
       return h.redirect(`/location/${location._id}`);
+    },
+  },
+
+  uploadImage: {
+    handler: async function (request, h) {
+      try {
+        const location = await db.locationStore.getLocationById(request.params.id);
+        const file = request.payload.imagefile;
+        if (Object.keys(file).length > 0) {
+          const url = await imageStore.uploadImage(request.payload.imagefile);
+          location.img = url;
+          await db.locationStore.updateLocation(location);
+        }
+        return h.redirect(`/location/${location._id}`);
+      } catch (err) {
+        console.log(err);
+        // eslint-disable-next-line no-restricted-globals
+        return h.redirect(`/location/${location._id}`);
+      }
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
     },
   },
 };
