@@ -34,12 +34,13 @@ const swaggerOptions = {
 
 async function init() {
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost",
+    port: process.env.PORT || 3000,
   });
+
+  await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
-  await server.register(Inert);
+  // await server.register(jwt);
 
   await server.register([
     Inert,
@@ -73,6 +74,11 @@ async function init() {
     redirectTo: "/",
     validate: accountsController.validate,
   });
+  // server.auth.strategy("jwt", "jwt", {
+  //   key: process.env.cookie_password,
+  //   validate: validate,
+  //   verifyOptions: { algorithms: ["HS256"] },
+  // });
   server.auth.default("session");
 
   db.init("mongo");
@@ -86,7 +92,5 @@ process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
 });
-
-
 
 init();
