@@ -1,6 +1,8 @@
 # IDE
 .idea
-.vscode
+
+# db
+db/
 
 # Logs
 logs
