@@ -1,5 +1,7 @@
+import dotenv from "dotenv";
 import { db } from "../models/db.js";
 import { UserSpec, UserCredentialsSpec, } from "../models/joi-schemas.js";
+
 
 export const accountsController = {
   index: {
@@ -12,6 +14,12 @@ export const accountsController = {
     auth: false,
     handler: function (request, h) {
       return h.view("signup-view", { title: "sign up for hikeplace" });
+    },
+  },
+  showAdmin: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("admin-view", { title: "admin for hikeplace" });
     },
   },
   signup: {
@@ -35,13 +43,6 @@ export const accountsController = {
     },
   },
 
-  showAdminLogin: {
-    auth: false,
-    handler: function (request, h) {
-      return h.view("admin-login-view", { title: "login to hikeplace as admin" });
-    },
-  },
-
   login: {
     auth: false,
     validate: {
@@ -53,16 +54,22 @@ export const accountsController = {
     },
     handler: async function (request, h) {
       const { email, password } = request.payload;
+
+      if (email === process.env.adminEmail && password === process.env.adminPassword) {
+        request.cookieAuth.set({ id: "admin" });
+        console.log("logging in: admin");
+        return h.redirect("/admin");
+      }
       const user = await db.userStore.getUserByEmail(email);
       if (!user || user.password !== password) {
+        console.log("no match");
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id });
+      console.log("user logged in");
       return h.redirect("/dashboard");
     },
   },
-
-
 
   logout: {
     handler: function (request, h) {
@@ -72,6 +79,10 @@ export const accountsController = {
   },
 
   async validate(request, session) {
+    if (session.id === "admin") {
+      return { isValid: true, credentials: { id: "admin" } };
+    }
+
     const user = await db.userStore.getUserById(session.id);
     if (!user) {
       return { isValid: false };

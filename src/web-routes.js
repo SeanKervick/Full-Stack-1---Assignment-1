@@ -2,6 +2,8 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { locationController } from "./controllers/location-controller.js";
+import { adminController } from "./controllers/admin-controller.js";
+
 // import { hikeController } from "./controllers/hike-controller.js";
 
 
@@ -24,6 +26,11 @@ export const webRoutes = [
 
   { method: "GET", path: "/dashboard/deletelocation/{id}", config: dashboardController.deleteLocation },
   { method: "GET", path: "/location/{id}/deletehike/{hikeid}", config: locationController.deleteHike },
+
+  { method: "GET", path: "/admin", config: adminController.index },
+  // { method: "GET", path: "/admin", config: accountsController.showAdmin },
+
+
 
   // { method: "GET", path: "/hike/{id}/edithike/{hikeid}", config: hikeController.index },
   // { method: "POST", path: "/hike/{id}/updatehike/{hikeid}", config: hikeController.update },
