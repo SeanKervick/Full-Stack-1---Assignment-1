@@ -16,6 +16,19 @@ export const dashboardController = {
     },
   },
 
+  explore: {
+      handler: async function (request, h) {
+        // const loggedInUser = request.auth.credentials;
+        const locations = await db.locationStore.getAllLocations();
+        const viewData = {
+          title: "hikeplace dashboard",
+          // user: loggedInUser,
+          locations: locations,
+        };
+        return h.view("explore-view", viewData);
+      },
+  },
+
   addLocation: {
     validate: {
       payload: LocationSpec,

@@ -1,29 +1,11 @@
-<nav class="navbar">
-  <div class="navbar-brand">
-    {{> hikeplace-brand}}
+{{> admin-menu}}
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered">Admin Panel</h1>
+    {{> list-users}}
   </div>
-  <div class="navbar-menu" id="navMenu">
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a id="logout" class="button" href="/logout"> logout </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-  <h1>TEST Admin</h1>
-  {{> list-users}}
 </section>
-{{#each locations}}
-  <div class="box box-link-hover-shadow">
-    <h2 class="title">
-      {{title}}
-    </h2>
-    <a href="/location" class="button">
-      <span class="icon is-small">
-        <i class="fas fa-folder-open"></i>
-      </span>
-    </a>
-  </div>
-{{/each}}
+
+<script>
+  document.getElementById("{{active}}").classList.add("is-primary");
+</script>

@@ -1,12 +1,29 @@
-{{#each locations}}
-  <div class="box box-link-hover-shadow">
-    <h2 class="title">
-      {{title}}
-    </h2>
-    <a href="/location/{{_id}}" class="button">
-      <span class="icon is-small">
-        <i class="fas fa-folder-open"></i>
-      </span>
-    </a>
+<div class="columns is-multiline is-centered">
+  {{#each users}}
+  <div class="column is-one-third">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">{{firstName}} {{lastName}}</p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p>• Email: {{email}}</p>
+          <p>• Password: {{password}}</p>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="/user/{{id}}" class="card-footer-item">view profile</a>
+        <a href="/admin/deleteuser/{{_id}}" class="button">
+          <i class="fas fa-trash has-text-danger"></i>
+        </a>
+      </footer>
+    </div>
   </div>
-{{/each}}
+  {{/each}}
+</div>
+<div class="box box-link-hover-shadow">
+    <h2 class="admin">
+      admin actions:
+    </h2>
+    <a id="deletall" class="button is-danger" href="/admin/deleteallusers" >DELETE ALL USERS </a>
+</div>

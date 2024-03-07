@@ -39,14 +39,6 @@ export const locationController = {
     },
   },
 
-  deleteHike: {
-    handler: async function(request, h) {
-      const location = await db.locationStore.getLocationById(request.params.id);
-      await db.hikeStore.deleteHike(request.params.hikeid);
-      return h.redirect(`/location/${location._id}`);
-    },
-  },
-
   uploadImage: {
     handler: async function (request, h) {
       try {
@@ -69,6 +61,14 @@ export const locationController = {
       output: "data",
       maxBytes: 209715200,
       parse: true,
+    },
+  },
+
+  deleteHike: {
+    handler: async function(request, h) {
+      const location = await db.locationStore.getLocationById(request.params.id);
+      await db.hikeStore.deleteHike(request.params.hikeid);
+      return h.redirect(`/location/${location._id}`);
     },
   },
 };
