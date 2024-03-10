@@ -31,19 +31,4 @@ export const adminController = {
     },
   },
 
-  // export const adminController = {
-  //   index: {
-  //     handler: async function (request, h) {
-  //       // const loggedInUser = request.auth.credentials;
-  //       const locations = await db.locationStore.getAllLocations();
-  //       const viewData = {
-  //         title: "hikeplace dashboard",
-  //         // user: loggedInUser,
-  //         locations: locations,
-  //       };
-  //       return h.view("admin-view", viewData);
-  //     },
-  //   },
-
-
 };

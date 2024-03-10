@@ -1,6 +1,6 @@
 <p align="center">
-<h1 style="font-size: 36px; margin-bottom: 20px;">HikePlace!</h1>
-<img src="/images/" alt="Image" width="75%"/>
+<h1 style="font-size: 36px; margin-bottom: 20px;">hikeplace!</h1>
+<img src="/images/readme-cover.png" alt="Image" width="75%"/>
 </p>
 
 
@@ -42,42 +42,33 @@
 
 
 **Software & Platforms**
-* 
+* Mongo DB
+* Node
+* Hapi
+* VSCode Editor 
+* Joi
+* Cloudinary
+* Cloud Atlas
+* Swagger API
 
 <p align="center">
 
 </p>
 
-**Primary Objectives**
-* 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- Deployment -->
 ## Demonstration
 
-* See a full demo of the project here:
+* See the full project deployed here:
 
-  https://www.youtube.com/
-
-**Flow Chart:**<br>
-
-<p align="center">
-
-<p>
-
-**Program Logic Explained:**
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+  https://hikeplace.onrender.com/
 
 
 ### Installation
 
 * Download the project here: 
 
-   https://github.com/SeanKervick/
+   • https://github.com/SeanKervick/
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -91,11 +82,16 @@ README Template:
 * https://github.com/othneildrew/Best-README-Template
 
 
-Learning Resources:
-* TBC
-
 Images:
-* https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theirishroadtrip.com%2Fcoumshingaun-lough-loop-walk
+* https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theirishroadtrip.com
+
+Hike Details:
+* https://www.discoverireland.ie/
+* https://www.activeme.ie/guides/coumshingaun-loop-walk-comeraghs-waterford/
+
+updateLocationImage():
+* https://github.com/chipspeak/placemark
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
