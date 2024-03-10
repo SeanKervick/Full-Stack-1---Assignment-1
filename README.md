@@ -1,6 +1,6 @@
 <p align="center">
 <h1 style="font-size: 36px; margin-bottom: 20px;">hikeplace!</h1>
-<img src="/images/readme-cover.png" alt="Image" width="75%"/>
+<img src="/public/images/readme-cover.png" alt="Image" width="75%"/>
 </p>
 
 
@@ -25,20 +25,10 @@
     - Core features:
       • Sign up / Login to service
       • Create, Read, Update, Delete (CRUD)
-      • Query
-      • Grouping into Categories
 
     - Enhanced Features:
-      • Placemark Images
-      • Placemark Map Location
+      • Images
       • Admin User/Dashboard
-
-    - Community Features:
-      • Share
-      • Reveiw & Rate
-      • Notice Board
-      • Live Updates
-      • Analytics
 
 
 **Software & Platforms**
@@ -63,12 +53,17 @@
 
   https://hikeplace.onrender.com/
 
+  or here:
+
+  https://season-efficient-goal.glitch.me/
+
 
 ### Installation
 
 * Download the project here: 
 
-   • https://github.com/SeanKervick/
+   • https://github.com/SeanKervick/hikeplace/archive/refs/heads/master.zip
+   • run 'npm install' from inside the project directory in a terminal.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
