@@ -1,29 +1,33 @@
 <div class="columns is-multiline is-centered">
   {{#each users}}
-  <div class="column is-one-third">
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">{{firstName}} {{lastName}}</p>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <p>• Email: {{email}}</p>
-          <p>• Password: {{password}}</p>
+  <div class="column is-half">
+    <div class="box">
+      <div class="columns is-multiline">
+        <div class="column is-full">
+          <h3 class="title">{{firstName}} {{lastName}}</h3>
+        </div>
+        <div class="column is-full">
+          <p><strong>Email:</strong> {{email}}</p>
+          <p><strong>Password:</strong> {{password}}</p>
+        </div>
+        <div class="column is-full">
+          <div class="button is-left">
+            <a href="/admin/deleteuser/{{_id}}" title="Delete users" class="button is-danger"
+            onclick="return confirm('Are you sure you want to permenantly delete this user?');">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
         </div>
       </div>
-      <footer class="card-footer">
-        <a href="/user/{{id}}" class="card-footer-item">view profile</a>
-        <a href="/admin/deleteuser/{{_id}}" class="button">
-          <i class="fas fa-trash has-text-danger"></i>
-        </a>
-      </footer>
     </div>
   </div>
   {{/each}}
 </div>
+
 <div class="box box-link-hover-shadow">
-    <h2 class="admin">
-      admin actions:
-    </h2>
-    <a id="deletall" class="button is-danger" href="/admin/deleteallusers" >DELETE ALL USERS </a>
+  <h2 class="admin">
+    Admin Actions:
+  </h2>
+  <a title="Delete All Users" class="button is-danger" href="/admin/deleteallusers"
+  onclick="return confirm('Are you sure you want to permenantly delete all users?');">DELETE ALL USERS</a>
 </div>

@@ -1,6 +1,5 @@
 import { v4 } from "uuid";
 import { db } from "./store-utils.js";
-import { hikeJsonStore } from "./hike-json-store.js";
 
 export const locationJsonStore = {
   async getAllLocations() {
@@ -16,16 +15,16 @@ export const locationJsonStore = {
     return location;
   },
 
-  async getLocationById(id) {
-    await db.read();
-    let list = db.data.locations.find((location) => location._id === id);
-    if (list) {
-      list.hikes = await hikeJsonStore.getHikesByLocationId(list._id);
-    } else {
-      list = null;
-    }
-    return list;
-  },
+  // async getLocationById(id) {
+  //   await db.read();
+  //   let list = db.data.locations.find((location) => location._id === id);
+  //   if (list) {
+  //     list.hikes = await hikeJsonStore.getHikesByLocationId(list._id);
+  //   } else {
+  //     list = null;
+  //   }
+  //   return list;
+  // },
 
   async getUserLocations(userid) {
     await db.read();

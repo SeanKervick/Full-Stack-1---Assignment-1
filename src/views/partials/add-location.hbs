@@ -1,39 +1,36 @@
-<form action="/dashboard/addlocation" method="POST">
+<form class="box" action="/dashboard/addlocation" method="POST">
+  <label>Enter Hike Trail Details:</label>
   <div class="field">
-    <label class="label">new county</label> 
-    <div class="control">
-      <div class="select">
-        <select name="title">
-          <option value="" disabled selected>select county</option>
-          <option value="Carlow">Carlow</option>
-          <option value="Cavan">Cavan</option>
-          <option value="Clare">Clare</option>
-          <option value="Cork">Cork</option>
-          <option value="Donegal">Donegal</option>
-          <option value="Dublin">Dublin</option>
-          <option value="Galway">Galway</option>
-          <option value="Kerry">Kerry</option>
-          <option value="Kildare">Kildare</option>
-          <option value="Kilkenny">Kilkenny</option>
-          <option value="Laois">Laois</option>
-          <option value="Leitrim">Leitrim</option>
-          <option value="Limerick">Limerick</option>
-          <option value="Longford">Longford</option>
-          <option value="Louth">Louth</option>
-          <option value="Mayo">Mayo</option>
-          <option value="Meath">Meath</option>
-          <option value="Monaghan">Monaghan</option>
-          <option value="Offaly">Offaly</option>
-          <option value="Roscommon">Roscommon</option>
-          <option value="Sligo">Sligo</option>
-          <option value="Tipperary">Tipperary</option>
-          <option value="Waterford">Waterford</option>
-          <option value="Westmeath">Westmeath</option>
-          <option value="Wexford">Wexford</option>
-          <option value="Wicklow">Wicklow</option>
-        </select>
+    <input class="input" type="text" placeholder="Enter Hike Trail Title" name="title">
+  </div>
+  <div class="field">
+    <textarea class="textarea" placeholder="Enter Description" name="description"></textarea>
+  </div>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Longitude" name="longitude">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Latitude" name="latitude">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Distance (km)" name="distance">
+      </div>
+      <div class="field">
+        <div class="control">
+          <div class="select">
+            <select name="difficulty">
+              <option value="" disabled selected>Select Difficulty</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <button class="button is-link">add new county</button>
+  <button class="button is-primary">Add Hike</button>
 </form>

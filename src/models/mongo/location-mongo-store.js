@@ -1,5 +1,4 @@
 import { Location } from "./location.js";
-import { hikeMongoStore } from "./hike-mongo-store.js";
 
 export const locationMongoStore = {
   async getAllLocations() {
@@ -11,7 +10,7 @@ export const locationMongoStore = {
     if (id) {
       const location = await Location.findOne({ _id: id }).lean();
       if (location) {
-        location.hikes = await hikeMongoStore.getHikesByLocationId(location._id);
+        // location.hikes = await hikeMongoStore.getHikesByLocationId(location._id);
       }
       return location;
     }
@@ -41,10 +40,26 @@ export const locationMongoStore = {
     await Location.deleteMany({});
   },
 
-  async updateLocation(updatedLocation) {
-    const location = await Location.findOne({ _id: updatedLocation._id });
-    location.title = updatedLocation.title;
-    location.img = updatedLocation.img;
-    await location.save();
-  }
+  // async updateLocation(updatedLocation) {
+  //   const location = await Location.findOne({ _id: updatedLocation._id });
+  //   location.title = updatedLocation.title;
+  //   location.img = updatedLocation.img;
+  //   await location.save();
+  // },
+
+    // function to update a location image
+    async updateLocationImage(locationId, imageUrl) {
+      // find the location by ID
+      const location = await Location.findById(locationId);
+      // check if the location exists
+      if (!location) {
+        throw new Error("location not found");
+      }
+      // update the img field with the new image URL
+      location.img = imageUrl;
+      // save the updated location
+      const updatedLocation = await location.save();
+      return updatedLocation;
+    },
+  
 };
