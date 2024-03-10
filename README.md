@@ -1,6 +1,6 @@
 <p align="center">
 <h1 style="font-size: 36px; margin-bottom: 20px;">hikeplace!</h1>
-<img src="/public/images/readme-cover.png" alt="Image" width="75%"/>
+<img src="/public/images/readme-photo.png" alt="Image" width="75%"/>
 </p>
 
 
