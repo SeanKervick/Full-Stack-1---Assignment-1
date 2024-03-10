@@ -63,6 +63,7 @@
 * Download the project here: 
 
    • https://github.com/SeanKervick/hikeplace/archive/refs/heads/master.zip
+   
    • run 'npm install' from inside the project directory in a terminal.
 
 
