@@ -20,19 +20,25 @@ export const UserCredentialsSpec = {
   password: Joi.string().required(),
 };
 
-// export const HikeSpec = {
-//   hikeName: Joi.string().required(),
-//   description: Joi.string().required(),
-//   difficulty: Joi.string().required(),
-//   length: Joi.number().allow("").optional(),
-//   elevation: Joi.string().required(),
-// };
+export const LocationSpec = Joi.object()
+  .keys({
+    title: Joi.string().required().example("Beethoven Sonatas"),
+    userid: IdSpec,
+  })
+  .label("Location");
 
-export const LocationSpec = {
-  title: Joi.string().required(),
-  description: Joi.string().required(),
-  longitude: Joi.number().allow("").optional(),
-  latitude: Joi.number().allow("").optional(),
-  distance: Joi.number().allow("").optional(),
-  difficulty: Joi.string().required(),
-};
+export const LocationSpecPlus = LocationSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("LocationPlus");
+
+export const LocationArraySpec = Joi.array().items(LocationSpecPlus).label("LocationArray");
+
+// export const LocationSpec = {
+//   title: Joi.string().required(),
+//   description: Joi.string().required(),
+//   longitude: Joi.number().allow("").optional(),
+//   latitude: Joi.number().allow("").optional(),
+//   distance: Joi.number().allow("").optional(),
+//   difficulty: Joi.string().required(),
+// };
