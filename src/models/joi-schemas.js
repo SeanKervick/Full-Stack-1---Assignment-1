@@ -22,7 +22,12 @@ export const UserCredentialsSpec = {
 
 export const LocationSpec = Joi.object()
   .keys({
-    title: Joi.string().required().example("Beethoven Sonatas"),
+    title: Joi.string().required(),
+    description: Joi.string().required(),
+    longitude: Joi.number().allow("").optional(),
+    latitude: Joi.number().allow("").optional(),
+    distance: Joi.number().allow("").optional(),
+    difficulty: Joi.string().required(),
     userid: IdSpec,
   })
   .label("Location");
